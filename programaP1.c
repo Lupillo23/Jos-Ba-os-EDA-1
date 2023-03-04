@@ -18,14 +18,17 @@ int main(){
     int p = 0, x, y;
     char *brd[8][8];
     
+    //Inicializa el tablero
     init_cboard(brd);
+    //Imprime el tablero
     print_cboard(brd);
     
+    //Menú de Opciones
     printf("\n1 Alfil \n2 Torre \n3 Salir \n ");
     scanf("%d", &p);
 
     switch(p){
-        case 1:
+        case 1://Alfil
             printf("Coordenadas: \n");
             printf("Y: \t");
             scanf("%d",&x);
@@ -35,12 +38,14 @@ int main(){
 
             //Imprime el tablero con la pieza escogida
             A_mov(x, y, brd);
+            //Coordenada escogida por el usuario
             brd[x][y] = "|A|";
+            //Imprime nuevamente el tablero
             print_cboard(brd);
             
             break;
             
-        case 2:
+        case 2://Torre
             printf("Coordenadas: \n");
             printf("Y: \t");
             scanf("%d",&x);
@@ -51,6 +56,7 @@ int main(){
             brd[x][y] = "|T|";
             //Imprime el tablero con la pieza escogida
             T_mov(x, y, brd);
+            //Vuelve a imprimir el tablero 
             print_cboard(brd);
             
             break;
